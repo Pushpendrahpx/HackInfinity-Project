@@ -5,34 +5,37 @@
 .rooms{
   display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;
   justify-content: center;
-  width: 100%;
+  width: fit-content;
+  color:black;
+
 }
 .room{
     padding:10px;
+    color: black;
 }
-
+.room-title{
+  color: black;
+}
   .cards .card-item {
     background: white;
     margin:10px;
     display: flex;
     flex-direction: column;
-    width: 100%;
     border-radius: 6px;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
     overflow: hiddansform 0.5s;
     -webkit-transition: transform 0.5s;
 
-    
+    color: black;
     width: 33%;
+    justify-content: center;
     align-items: center;
   }
 
   .cards .card-item:active {
     cursor: pointer;
-    transform: scalen;
-    transition: tre(0.8);
     -webkit-transform: scale(0.8);
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
   }
   .cards .card-item:hover .card-image {
     opacity: 1;

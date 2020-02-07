@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import './home.css'
+import { Link } from 'react-router-dom'
+import Footer from '../../Components/Footer/Footer'
 
 class home extends Component {
     constructor(props) {
@@ -112,17 +114,19 @@ class home extends Component {
                 <div className='homecontainer'>
                     {/* ================================== Rooms ================================== */}
                         
-                    <b className='lead' style={{color:"white"}}>Rooms Available</b>
+                    <b className='lead'>Rooms Available</b>
                     <div className='rooms cards horizontal-scroll-wrapper'>{/* Users Rooms Appliances with Rooms Services */}
                         {
                             this.Rooms.map(
                                 room=>{
                                     return(
-                                        <div className='room card-item ripple' style={{background:"url('https://image.flaticon.com/icons/svg/2321/2321390.svg') center fit "}}> {/*  for Every Room Actually Map Method will Iterate Here */}
+                                       <Link className='room card-item ripple' style={{textDecoration:"none"}} to={`/home/`+room.name}>
+                                        <div className='' style={{background:"url('https://image.flaticon.com/icons/svg/2321/2321390.svg') center fit "}}> {/*  for Every Room Actually Map Method will Iterate Here */}
                                                 <div className='room-title lead'>{room.name}</div>
                                                 <div className='room-devices'>{room.length}</div> 
                             
                                         </div>
+                                        </Link>
                                     );
                                 }
                             )
@@ -155,7 +159,9 @@ class home extends Component {
                         4. Below an Another Drawer kind to Add People, [ Like Floating Button ]  */}
                    
                 </div>
-
+                
+                <Footer />
+                
                 
             </div>
         );

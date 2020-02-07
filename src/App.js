@@ -6,6 +6,10 @@ import Register from './Pages/register/register';
 
 
 const Home = lazy(() => import('./Pages/home/home'));
+const Rooms = lazy(()=> import('./Pages/Rooms/Rooms'));
+const Notification = lazy(()=>import('./Pages/Notification/Notification'));
+const Profile = lazy(()=> import('./Pages/Profile/Profile'))
+
 
 class App extends Component {
 
@@ -33,8 +37,10 @@ class App extends Component {
             <Route path='/' exact component={Lander} />
             <Route path='/register' exact component={Register} />
             <Route path='/home' exact component={Home} />
-            <Route path='/home/:roomname' exact component={Home} />
-          </Switch>
+            <Route path='/home/:roomname' exact component={Rooms} />
+            <Route path='/notification' exact component={Notification} />
+            <Route path='/profile' exact component={Profile} />
+            </Switch>
           </Suspense>
         </Router>
       </div>
