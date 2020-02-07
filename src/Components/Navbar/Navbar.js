@@ -13,10 +13,10 @@ class Navbar extends Component {
 
     render() {
         return (
-            <div id='Navbar'>
-                <div id='logo' className='elem'>Logo</div>
-                <div id='title' className='elem'>Title</div>
-                <div id='drawer' className='elem'> Drawer</div>
+            <div id='Navbar' className=''>
+                <div id='logo' className='elem ripple'>Logo</div>
+                <div id='title' className='elem ripple'>Title</div>
+                <div id='drawer' className='elem ripple'> Drawer</div>
             </div>
         )
     }

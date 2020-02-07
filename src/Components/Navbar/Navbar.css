@@ -1,16 +1,17 @@
 #Navbar{
     top:0px;
-    position: relative;
+    position: sticky;
     left:0px;
     right:0px;
-    background-color: #33aeff;
+    background-color: #363636;
     color: whitesmoke;
     display: grid;
     grid-template-areas: "logo title drawer";
     grid-template-columns: 100px auto 100px;
-    box-shadow: 0 0 10px #33aeff;
+    box-shadow: 0 0 10px #363636;
     /* TO be Changed */
     padding: 15px;
+    z-index: 2;
 }
 #logo{
     grid-area:logo;

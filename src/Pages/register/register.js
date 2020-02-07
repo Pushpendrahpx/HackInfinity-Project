@@ -31,11 +31,11 @@ class register extends Component {
                 </div>
                 <form onSubmit={this.login}>
                     <div className='form-group'>
-                        <input id='registerphone' type='text' placeholder='Enter Your Phone Number' />
+                        <input id='registerphone' className='lead' type='number' placeholder='Enter Your Phone Number' />
                     </div>
-                  <small>By Submitting here you are agreeing Terms and Conditions</small>
+                  <small className=''>By Submitting here you are agreeing Terms and Conditions</small>
                     <div className='form-group'>
-                        <button id='registerbtn'>Save Something More</button> 
+                        <button id='registerbtn'>Submit, Let's Save</button> 
                     </div>
                 </form>
             </div>

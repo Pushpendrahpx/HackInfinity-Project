@@ -33,6 +33,7 @@ class App extends Component {
             <Route path='/' exact component={Lander} />
             <Route path='/register' exact component={Register} />
             <Route path='/home' exact component={Home} />
+            <Route path='/home/:roomname' exact component={Home} />
           </Switch>
           </Suspense>
         </Router>
