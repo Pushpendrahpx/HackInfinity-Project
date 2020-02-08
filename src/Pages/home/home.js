@@ -61,9 +61,128 @@ class home extends Component {
             {type:"cors","Access-Control-Allow-Origin":"*"}
         )
         let data = await response.json();
+
+            data = {
+                "female" : [
+                  "Saanvi",
+                  "Anya",
+                  "Aadhya",
+                  "Aaradhya",
+                  "Ananya",
+                  "Pari",
+                  "Anika",
+                  "Navya",
+                  "Angel",
+                  "Diya",
+                  "Myra",
+                  "Sara",
+                  "Iraa",
+                  "Ahana",
+                  "Anvi",
+                  "Prisha",
+                  "Riya",
+                  "Aarohi",
+                  "Anaya",
+                  "Akshara",
+                  "Eva",
+                  "Shanaya",
+                  "Kyra",
+                  "Siya"
+                ],
+                "male" : [
+                  "Aarav",
+                  "Vihaan",
+                  "Vivaan",
+                  "Ananya",
+                  "Diya",
+                  "Advik",
+                  "Kabir",
+                  "Anaya",
+                  "Aarav",
+                  "Vivaan",
+                  "Aditya",
+                  "Vivaan",
+                  "Vihaan",
+                  "Arjun",
+                  "Vivaan",
+                  "Reyansh",
+                  "Mohammed",
+                  "Sai",
+                  "Arnav",
+                  "Aayan",
+                  "Krishna",
+                  "Ishaan",
+                  "Shaurya",
+                  "Atharva",
+                  "Advik",
+                  "Pranav",
+                  "Advaith",
+                  "Aaryan",
+                  "Dhruv",
+                  "Kabir",
+                  "Ritvik",
+                  "Aarush",
+                  "Kian",
+                  "Darsh",
+                  "Veer"
+                ],
+                "surnames" : [
+                  "Bedi",
+                  "Gandhi",
+                  "Parekh",
+                  "Kohli",
+                  "Ahluwalia",
+                  "Chandra",
+                  "Jha",
+                  "Khanna",
+                  "Bajwa",
+                  "Chawla",
+                  "Lal",
+                  "Anand",
+                  "Gill",
+                  "Chakrabarti",
+                  "Dubey",
+                  "Kapoor",
+                  "Khurana",
+                  "Modi",
+                  "Kulkarni",
+                  "Khatri",
+                  "Kaur",
+                  "Dhillon",
+                  "Kumar",
+                  "Gupta",
+                  "Naidu",
+                  "Das",
+                  "Jain",
+                  "Chowdhury",
+                  "Dalal",
+                  "Thakur",
+                  "Gokhale",
+                  "Apte",
+                  "Sachdev",
+                  "Mehta",
+                  "Ganguly",
+                  "Bhasin",
+                  "Mannan",
+                  "Ahuja",
+                  "Singh",
+                  "Bakshi",
+                  "Basu",
+                  "Ray",
+                  "Mani",
+                  "Datta",
+                  "Balakrishna",
+                  "Biswas",
+                  "Laghari",
+                  "Malhotra",
+                  "Dewan",
+                  "Purohit"
+                ]
+              }
             console.log("After Requset",data)
+
         this.setState({
-            LeaderboardData:data
+            LeaderboardData:data.male
         },()=>{
             console.log("Printed")
             this.render()
@@ -131,7 +250,7 @@ class home extends Component {
                             {
                                 this.state.LeaderboardData.map(user=>{
                                     return(
-                                    <div className='leaderboard-item ripple' key={user}>{user}</div>
+                                    <div className='leaderboard-item ripple' key={user}>{user} : {` Zeus Score : `+user.length * 100}</div>
                                     );
                                 })
                             }
