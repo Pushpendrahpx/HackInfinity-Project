@@ -99,16 +99,15 @@ class Rooms extends Component{
                         {this.state.roomname}
                     </div>
                     <div className='rooms'>
-                        <div className='lead'>Helo</div>
                         {
                             this.state.appliances.map(eachAppliance=>{
                                 console.log(eachAppliance.a_io)
                                 return(
-                                <center onClick={this.DeviceIO} name="device" status="on" value={eachAppliance.a_name} key={eachAppliance.a_name} className={eachAppliance.a_io == true?'appliance  appliance_active':'appliance '}>
+                                <div onClick={this.DeviceIO} name="device" status="on" value={eachAppliance.a_name} key={eachAppliance.a_name} className={eachAppliance.a_io == true?'appliance  appliance_active':'appliance '}>
                                     
                                         {eachAppliance.a_name}
                                    
-                                </center>
+                                </div>
                                 );
                             })
                         }

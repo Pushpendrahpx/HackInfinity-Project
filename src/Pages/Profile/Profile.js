@@ -6,10 +6,13 @@ import './Profile.css';
 class Profile extends Component {
     constructor(props) {
         super(props)
+        let data = localStorage.getItem("userdata");
 
         this.state = {
-                 
+            User:(JSON.parse(data))[0]
+
         }
+        console.log(this.state.User)
     }
 
     render() {
@@ -19,9 +22,14 @@ class Profile extends Component {
                     <div className='Profile-Container'>
                     <img  className='User-Photo ripple' style={{height:'200px'}} src='https://avatars0.githubusercontent.com/u/24816726?v=4' />
                     <div className='User-Profile ripple'>
-                            <i className='fa fa-users userprofilename'></i>Pushpendra Vishwakarma
+                            <i className='fa fa-users userprofilename'></i>
+                            {this.state.User.name}
                             <br />
-                            <i className='fa fa-envelope'></i> pushpendra.hpx2001@gmail.com
+                            <i className='fa fa-envelope userprofilename'></i>{this.state.User.email}
+                            <br />
+                            <i className='fa fa-phone userprofilename'></i>{this.state.User.phone}
+                            <br />
+                            <i className='fa fa-map-marker userprofilename'></i>{this.state.User.address}
                     </div>
 
                     <div className='Profile-bar'>

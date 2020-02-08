@@ -5,12 +5,15 @@ import './History.css';
 class History extends Component {
     constructor(props) {
         super(props)
-        
+        let userdata = localStorage.getItem('userdata');
+        let User = JSON.parse(userdata);
+
         this.progressStatus = [0,30,45,60,75,90,95,100];
         // Status - 30, 45, 60,75,90,95
         this.classOfProgessStatus = "pie-wrapper progress-"+this.progressStatus[7];
         this.state = {
-            progressBarPercentage:this.classOfProgessStatus
+            progressBarPercentage:this.classOfProgessStatus,
+            userData:User[0]
         }
     }
 
@@ -23,7 +26,7 @@ class History extends Component {
                     <div className="row">
                         <div class="set-size charts-container">
                             <div class={this.state.progressBarPercentage}>
-                                <span class="label">90<small className='smaller'>%</small></span>
+                                <span class="label">{this.state.userData.score}<small className='smaller'>%</small></span>
                                 <div class="pie">
                                     <div class="left-side half-circle"></div>
                                     <div class="right-side half-circle"></div>
