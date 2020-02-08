@@ -55,7 +55,7 @@ class History extends Component {
                             <br /><br />
                             <div className='Card-title' style={{transform: "translateX(-15px)"}}>
                                {
-                                   this.count === 30?'Yesterday\'s Bill is of $43.32':''
+                                   this.count === 30?'Yesterday\'s Bill will be $43.32':''
                                }
                             </div>
                         </div>
@@ -69,7 +69,7 @@ class History extends Component {
                                             
                                             <div className='Card-title' key={this.count}>
                                               
-                                                On {this.state.count === 0 ?'Yesterday\'s':this.count}th January 2020 Bill was of ₹{Math.ceil(bill*5/1000)}
+                                                On {this.state.count === 0 ?'Yesterday\'s':this.count}th January 2020 Bill was ₹{Math.ceil(bill*5/1000)}
                                             </div>
                                         );
                                     }
