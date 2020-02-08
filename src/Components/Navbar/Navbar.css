@@ -10,18 +10,23 @@
     grid-template-columns: 100px auto 100px;
     box-shadow: 0 0 10px #363636;
     /* TO be Changed */
-    padding: 15px;
     z-index: 2;
 }
 #logo{
+    padding-top:10px;
+    padding-bottom:10px;
     grid-area:logo;
     color: white;
     text-decoration: none;
 }
 #title{
+    padding-top:10px;
+    padding-bottom:10px;
     grid-area:title;
 }
 #drawer{
+    padding-top:10px;
+    padding-bottom:10px;
     grid-area: drawer;
 }
 .elem{

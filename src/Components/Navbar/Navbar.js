@@ -24,7 +24,7 @@ class Navbar extends Component {
         let ourdrawer;
         let drawericon;
         if(this.state.isDrawer){
-            drawericon = <div>toClose</div>;
+            drawericon = <div><i className="fa fa-times" aria-hidden="true"></i></div>;
             ourdrawer = <div className='drawer-content'>
                 <h1 style={{textAlign:'center'}}>
                     <div className='Navbar_Content_Header'>
@@ -41,13 +41,13 @@ class Navbar extends Component {
             </div>;
             console.log(drawericon)
         }else{
-            drawericon=<div>toOpen</div>;
+            drawericon=<div><i className="fa fa-reorder" aria-hidden="true"></i></div>;
             ourdrawer = '';
         }
         return (
             <div id='Navbar' className=''>
-                <Link id='logo' to='/history'><div className='elem ripple'>History</div></Link>
-                <Link to='/home'  id='title'><div className='elem ripple' style={{textDecoration:"none",color:"white"}}>Title</div></Link>
+                <Link id='logo' to='/history'><div className='elem ripple'><i className="fa fa-calendar" aria-hidden="true"></i></div></Link>
+                <Link to='/home'  id='title'><div className='elem ripple' style={{textDecoration:"none",color:"white"}}>Zeus</div></Link>
                 <div id='drawer' className='elem' onClick={this.openDrawer} style={{background:ourdrawer === ''?'':'white',color:ourdrawer === ''?'':'black'}}>{drawericon}</div>
                 {
                     ourdrawer

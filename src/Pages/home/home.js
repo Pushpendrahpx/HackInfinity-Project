@@ -10,94 +10,32 @@ class home extends Component {
 
         this.state = {
             LeaderboardData:[],
-            bio:''
+            bio:'',
+            Rooms:[]
         }
 
 
         this.getLeaderboardData = this.getLeaderboardData.bind(this);
 
 
-
-        this.Rooms = [
-            {
-                name:"Living Room",
-                icon:'https://image.flaticon.com/icons/svg/2321/2321390.svg',
-                devices:[
-                    {
-                        name:"Television",
-                        power:"25W",
-                        bill:"10"
-                    },
-                    {
-                        name:"Air Conditioner",
-                        power:"50W",
-                        bill:"40"
-                    }
-                ]
-            },
-            {
-                name:"Bed Room",
-                icon:'https://image.flaticon.com/icons/svg/2321/2321390.svg',
-                devices:[
-                    {
-                        name:"Television",
-                        power:"25W",
-                        bill:"10"
-                    },
-                    {
-                        name:"Air Conditioner",
-                        power:"50W",
-                        bill:"40"
-                    }
-                ]
-            },
-            {
-                name:"Kitchen",
-                icon:'https://image.flaticon.com/icons/svg/2321/2321390.svg',
-                devices:[
-                    {
-                        name:"Television",
-                        power:"25W",
-                        bill:"10"
-                    },
-                    {
-                        name:"Air Conditioner",
-                        power:"50W",
-                        bill:"40"
-                    }
-                ]
-            },
-            {
-                name:"Add [ + ]",
-                icon:'https://image.flaticon.com/icons/svg/2321/2321390.svg',
-                devices:[
-                    {
-                        name:"Television",
-                        power:"25W",
-                        bill:"10"
-                    },
-                    {
-                        name:"Air Conditioner",
-                        power:"50W",
-                        bill:"40"
-                    }
-                ]
-            }
-        ];
     }
- componentDidMount(){
+ async componentDidMount(){
     this.getLeaderboardData()
 
+    let rooms_response = await fetch("http://localhost:8000/popu/rooms/");
+    let rooms_json = await rooms_response.json();
+    this.setState({
+        Rooms:rooms_json
+    });
 
         
  }
     getLeaderboardData = async (index = 1)=>{
         let response = await fetch(
-            "https://api.github.com/users/Pushpendrahpx/followers"
+            "http://localhost:8000/popu/rooms/"
         )
         let data = await response.json();
 
-        console.log(data);
         this.setState({
             LeaderboardData:data
         },()=>{
@@ -117,13 +55,12 @@ class home extends Component {
                     <b className='lead'>Rooms Available</b>
                     <div className='rooms cards horizontal-scroll-wrapper'>{/* Users Rooms Appliances with Rooms Services */}
                         {
-                            this.Rooms.map(
+                            this.state.Rooms.map(
                                 room=>{
                                     return(
-                                       <Link className='room card-item ripple' style={{textDecoration:"none"}} to={`/home/`+room.name}>
-                                        <div className='' style={{background:"url('https://image.flaticon.com/icons/svg/2321/2321390.svg') center fit "}}> {/*  for Every Room Actually Map Method will Iterate Here */}
-                                                <div className='room-title lead'>{room.name}</div>
-                                                <div className='room-devices'>{room.length}</div> 
+                                       <Link key={room}  className='room card-item ripple' style={{textDecoration:"none"}} to={`/home/`+room}>
+                                        <div key={room} className='' style={{background:"url('https://image.flaticon.com/icons/svg/2321/2321390.svg') center fit "}}> {/*  for Every Room Actually Map Method will Iterate Here */}
+                                                <div  className='room-title lead'>{room}</div>
                             
                                         </div>
                                         </Link>
@@ -144,11 +81,11 @@ class home extends Component {
                             
                     {/* ================================== Rooms ================================== */}
                         <div className='leaderboard'>
-                            <span className='lead' style={{textAlign:"center",fontSize:"30px",padding:"30px",margin:"20px"}}>Leaderboard</span>
+                            <span className='lead'  style={{textAlign:"center",fontSize:"30px",padding:"30px",margin:"20px"}}>Leaderboard</span>
                             {
                                 this.state.LeaderboardData.map(user=>{
                                     return(
-                                    <div className='leaderboard-item ripple'>{user.login}</div>
+                                    <div className='leaderboard-item ripple' key={user}>{user}</div>
                                     );
                                 })
                             }

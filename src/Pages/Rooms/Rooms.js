@@ -15,9 +15,9 @@ class Rooms extends Component{
     }
 
     async componentDidMount(){
-        let response = await fetch('https://api.github.com/users/Pushpendrahpx/followers');
+        let response = await fetch('http://localhost:8000/api/rooms/');
         let data = await response.json();
-
+        console.log(data)
         this.setState(
             {
                 appliances:data,
@@ -42,12 +42,12 @@ class Rooms extends Component{
                         {
                             this.state.appliances.map(
                                 appliance =>{
-                                    return(<div key={appliance.id} className='card ripple'>
+                                    return(<div key={appliance} className='card ripple'>
                                         
                                             <div className='lead'>
-                                                {appliance.login}
+                                                {appliance}
                                                 <br />
-                                                {appliance.id}
+                                                {appliance}
                                             </div>
                                         
                                     </div>);

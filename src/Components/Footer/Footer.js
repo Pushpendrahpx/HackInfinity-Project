@@ -14,10 +14,10 @@ class Footer extends Component{
         return(
             <div className='Footer_container'>
                 
-                <Link to='/home' className="Footer_item ripple">Home</Link>
-                <Link to='/totalbill' className="Footer_item ripple">Consumption</Link> {/* Energy Optimisation */}
-                <Link to='/notification' className="Footer_item ripple">Notifications</Link>
-                <Link to='/profile' className="Footer_item ripple">Profile</Link>
+                <Link to='/home' className="Footer_item ripple"><i className="fa fa-home" aria-hidden="true"></i></Link>
+                <Link to='/totalbill' className="Footer_item ripple"><i className="fa fa-flash" aria-hidden="true"></i></Link> {/* Energy Optimisation */}
+                <Link to='/notification' className="Footer_item ripple"><i className="fa fa-bell" aria-hidden="true"></i></Link>
+                <Link to='/profile' className="Footer_item ripple"><i className="fa fa-user" aria-hidden="true"></i></Link>
             </div>
         )
     }

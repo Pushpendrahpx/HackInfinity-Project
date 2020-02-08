@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Lander from './Pages/lander/lander';
 import Register from './Pages/register/register';
+import History from './Pages/History/History';
 
 
 const Home = lazy(() => import('./Pages/home/home'));
@@ -40,6 +41,7 @@ class App extends Component {
             <Route path='/home/:roomname' exact component={Rooms} />
             <Route path='/notification' exact component={Notification} />
             <Route path='/profile' exact component={Profile} />
+            <Route path='/history' exact component={History} />
             </Switch>
           </Suspense>
         </Router>
