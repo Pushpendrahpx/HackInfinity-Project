@@ -34,7 +34,6 @@ class Notification extends Component {
         let data = await reponse.json();
 
         console.log(data.task)
-        this.setState({})
 
     }
 

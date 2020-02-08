@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import './History.css';
+import Host from '../../myIp';
+import { ThemeConsumer } from 'styled-components';
 class History extends Component {
     constructor(props) {
         super(props)
@@ -13,8 +15,22 @@ class History extends Component {
         this.classOfProgessStatus = "pie-wrapper progress-"+this.progressStatus[7];
         this.state = {
             progressBarPercentage:this.classOfProgessStatus,
-            userData:User[0]
+            userData:User[0],
+            Bills:[]
         }
+        this.count = 30
+        
+    }
+
+    async componentDidMount(){
+        let response = await fetch(
+            "http://"+Host.host+":8000/api/use/"
+        )
+        let data = await response.json()
+        console.log(data)
+        this.setState({
+            Bills:data
+        })
     }
 
     render() {
@@ -24,12 +40,13 @@ class History extends Component {
                     <div className='History-Container'>
                     
                     <div className="row">
-                        <div class="set-size charts-container">
-                            <div class={this.state.progressBarPercentage}>
-                                <span class="label">{this.state.userData.score}<small className='smaller'>%</small></span>
-                                <div class="pie">
-                                    <div class="left-side half-circle"></div>
-                                    <div class="right-side half-circle"></div>
+                        <div className="set-size charts-container">
+                            <div className={this.state.progressBarPercentage}>
+                                <span className="label">{this.state.userData.score}</span>
+                                
+                                <div className="pie">
+                                    <div className="left-side half-circle"></div>
+                                    <div className="right-side half-circle"></div>
                                 </div>
                             </div>
 
@@ -37,31 +54,28 @@ class History extends Component {
                         <div className='Consumption-Container lead'>
                             <br /><br />
                             <div className='Card-title' style={{transform: "translateX(-15px)"}}>
-                                Yesterday's Bill is of $43.32
+                               {
+                                   this.count === 30?'Yesterday\'s Bill is of $43.32':''
+                               }
                             </div>
                         </div>
                     </div>
-                            <div className='Card-title'>
-                                Bill on 28 Jan 2018 $43.32
-                            </div>
-                            <div className='Card-title'>
-                                Yesterday's Bill is of $43.32
-                            </div>
-                            <div className='Card-title'>
-                                Yesterday's Bill is of $43.32
-                            </div>
-                            <div className='Card-title'>
-                                Yesterday's Bill is of $43.32
-                            </div>
-                            <div className='Card-title'>
-                                Yesterday's Bill is of $43.32
-                            </div>
-                            <div className='Card-title'>
-                                Yesterday's Bill is of $43.32
-                            </div>
-                            <div className='Card-title'>
-                                Yesterday's Bill is of $43.32
-                            </div><br />
+                            {
+                                this.state.Bills.map(
+                                    bill=>{
+                                            this.count--;
+                                       
+                                            return(
+                                            
+                                            <div className='Card-title' key={this.count}>
+                                              
+                                                On {this.state.count === 0 ?'Yesterday\'s':this.count}th January 2020 Bill was of ₹{Math.ceil(bill*5/1000)}
+                                            </div>
+                                        );
+                                    }
+                                )
+                            }
+                            <br />
                             <div className='Card-title' style={{fontSize:'20px'}}>
                                 Load More . . .
                             </div>

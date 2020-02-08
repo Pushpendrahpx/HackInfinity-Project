@@ -28,7 +28,7 @@ class home extends Component {
             Rooms:[],
             User:{},
             progressBarPercentage:this.classOfProgessStatus,
-            userData:User[0]
+            userData:User
         }
 
 
@@ -196,25 +196,6 @@ class home extends Component {
                 <Navbar />
                 <div className='homecontainer'>
 
-                     
-                <div className="row">
-                        <div class="set-size charts-container">
-                            <div class={this.state.progressBarPercentage}>
-                                <span class="label">{this.state.userData.score}<small className='smaller'>%</small></span>
-                                <div class="pie">
-                                    <div class="left-side half-circle"></div>
-                                    <div class="right-side half-circle"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className='Consumption-Container lead'>
-                            <br /><br />
-                            <div className='Card-title' style={{transform: "translateX(-15px)"}}>
-                                Yesterday's Bill is of $43.32
-                            </div>
-                        </div>
-                    </div>
                     {/* ================================== Rooms ================================== */}
                         
                     <b className='lead'>Rooms Available</b>

@@ -11,12 +11,11 @@ const Rooms = lazy(()=> import('./Pages/Rooms/Rooms'));
 const Notification = lazy(()=>import('./Pages/Notification/Notification'));
 const Profile = lazy(()=> import('./Pages/Profile/Profile'))
 
-
 class App extends Component {
 
   constructor(){
     super()
-
+    
     this.state = {
       isLoaded:false
     }
