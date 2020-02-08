@@ -23,7 +23,7 @@ class History extends Component {
                     <div className="row">
                         <div class="set-size charts-container">
                             <div class={this.state.progressBarPercentage}>
-                                <span class="label">90</span>
+                                <span class="label">90<small className='smaller'>%</small></span>
                                 <div class="pie">
                                     <div class="left-side half-circle"></div>
                                     <div class="right-side half-circle"></div>
@@ -31,11 +31,38 @@ class History extends Component {
                             </div>
 
                         </div>
-                    <div className='lead'>
-                       
-                        Previous Consumption
+                        <div className='Consumption-Container lead'>
+                            <br /><br />
+                            <div className='Card-title' style={{transform: "translateX(-15px)"}}>
+                                Yesterday's Bill is of $43.32
+                            </div>
+                        </div>
                     </div>
-                    </div>
+                            <div className='Card-title'>
+                                Bill on 28 Jan 2018 $43.32
+                            </div>
+                            <div className='Card-title'>
+                                Yesterday's Bill is of $43.32
+                            </div>
+                            <div className='Card-title'>
+                                Yesterday's Bill is of $43.32
+                            </div>
+                            <div className='Card-title'>
+                                Yesterday's Bill is of $43.32
+                            </div>
+                            <div className='Card-title'>
+                                Yesterday's Bill is of $43.32
+                            </div>
+                            <div className='Card-title'>
+                                Yesterday's Bill is of $43.32
+                            </div>
+                            <div className='Card-title'>
+                                Yesterday's Bill is of $43.32
+                            </div><br />
+                            <div className='Card-title' style={{fontSize:'20px'}}>
+                                Load More . . .
+                            </div>
+                            <br /><br /><br />
                     </div>
                 <Footer />
             </div>

@@ -3,10 +3,7 @@
     background-image: linear-gradient(45deg, blue,#00ffad);
 }
 .rooms{
-  display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;
-  justify-content: center;
-  /* 
-  width: fit-content; */
+  display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;
   color:black;
 
 }
@@ -29,7 +26,7 @@
     -webkit-transition: transform 0.5s;
 
     color: black;
-    width: 33%;
+    width:fit-content;
     justify-content: center;
     align-items: center;
   }

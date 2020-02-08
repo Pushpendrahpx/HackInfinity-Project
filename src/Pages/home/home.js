@@ -9,16 +9,19 @@ class home extends Component {
         console.log(Host.host)
         super(props)
 
+     
+        
+       
         this.state = {
             LeaderboardData:[],
             bio:'',
-            Rooms:[]
+            Rooms:[],
+            User:{}
         }
 
 
         this.getLeaderboardData = this.getLeaderboardData.bind(this);
-
-
+        console.log(this.state.User)
     }
  async componentDidMount(){
     this.getLeaderboardData()
@@ -29,7 +32,14 @@ class home extends Component {
         Rooms:rooms_json
     });
 
-        
+    let User_response = await fetch("http://"+Host.host+":8000/api/usview/");
+    let User = await User_response.json();
+
+    this.setState({
+        User:User
+    })
+    console.log(this.state)
+   localStorage.setItem("userdata",JSON.stringify(User));
  }
     getLeaderboardData = async (index = 1)=>{
         
@@ -59,38 +69,6 @@ class home extends Component {
                     {/* ================================== Rooms ================================== */}
                         
                     <b className='lead'>Rooms Available</b>
-                    <div className='rooms cards horizontal-scroll-wrapper'>{/* Users Rooms Appliances with Rooms Services */}
-                        {
-                            this.state.Rooms.map(
-                                room=>{
-                                    return(
-                                       <Link key={room}  className='room card-item ripple' style={{textDecoration:"none"}} to={`/home/`+room}>
-                                        <div key={room} className='' style={{background:"url('https://image.flaticon.com/icons/svg/2321/2321390.svg') center fit "}}> {/*  for Every Room Actually Map Method will Iterate Here */}
-                                                <div  className='room-title lead'>{room}</div>
-                            
-                                        </div>
-                                        </Link>
-                                    );
-                                }
-                            )
-                        }
-                    </div>
-                    <div className='rooms cards horizontal-scroll-wrapper'>{/* Users Rooms Appliances with Rooms Services */}
-                        {
-                            this.state.Rooms.map(
-                                room=>{
-                                    return(
-                                       <Link key={room}  className='room card-item ripple' style={{textDecoration:"none"}} to={`/home/`+room}>
-                                        <div key={room} className='' style={{background:"url('https://image.flaticon.com/icons/svg/2321/2321390.svg') center fit "}}> {/*  for Every Room Actually Map Method will Iterate Here */}
-                                                <div  className='room-title lead'>{room}</div>
-                            
-                                        </div>
-                                        </Link>
-                                    );
-                                }
-                            )
-                        }
-                    </div>
                     <div className='rooms cards horizontal-scroll-wrapper'>{/* Users Rooms Appliances with Rooms Services */}
                         {
                             this.state.Rooms.map(

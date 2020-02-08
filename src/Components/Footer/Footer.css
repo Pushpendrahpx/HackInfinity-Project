@@ -1,7 +1,7 @@
 .Footer_container{
     
     bottom:0px;
-    position: sticky;
+    position: fixed;
     left:0px;
     right:0px;
     width: 100%;
@@ -19,7 +19,7 @@
     background: transparent;
     color: white;
     width: 25%;
-    padding: 10px;
+    padding: 15px;
     margin-left: 5px;
     margin-right: 5px;
     cursor: pointer;

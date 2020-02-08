@@ -19,7 +19,7 @@ class Rooms extends Component{
 
         this.routes = {
             'hall':1,
-            'bedroom':2,
+            'bedroom':5,
             'kitchen':3
         }
 

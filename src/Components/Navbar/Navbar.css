@@ -13,20 +13,19 @@
     z-index: 2;
 }
 #logo{
-    padding-top:10px;
-    padding-bottom:10px;
+    padding:15px;
     grid-area:logo;
     color: white;
     text-decoration: none;
 }
 #title{
-    padding-top:10px;
-    padding-bottom:10px;
+    padding:15px;
+    padding:15px;
     grid-area:title;
 }
 #drawer{
-    padding-top:10px;
-    padding-bottom:10px;
+    padding-top:15px;
+    padding-bottom:15px;
     grid-area: drawer;
 }
 .elem{

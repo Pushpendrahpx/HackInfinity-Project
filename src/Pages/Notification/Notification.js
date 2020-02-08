@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
-
+import './Notification.css'
 class Notification extends Component {
     constructor(props) {
         super(props)
@@ -9,34 +9,39 @@ class Notification extends Component {
         this.state = {
                  
         }
+        // List of Notification Data - 
+        // 1. Notify Title
+        // 2. body
+        /* 3. Optimization
+              Warning
+              On-Off Lock Room
+        // Leaderboard - GitHub
+        // User Profile - Photu, Naam, Adres, Phone Number, score(init = 0), email 
+        
+
+        */
     }
 
     render() {
         return (
-            <div>
+            <span>
                 <Navbar />
-                    <ul>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                        <h1>Notifications Content</h1>
-                    </ul>
+                <div className='Notification-Container'>
+                    <div className='Notification'>
+                        <div className='Notification-Content'>
+                            Your Bill Amount Reached
+                        </div>
+                    </div>
+                    <div className='Notification'>
+                        <div className='Notification-Content'>
+                            Your Bill Amount Reached
+                        </div>
+                    </div>
+                </div>
                 <Footer />
-            </div>
+            </span>
         )
     }
 }
 
-export default Notification
+export default Notification;
