@@ -16,70 +16,22 @@ class Notification extends Component {
             <div>
                 <Navbar />
                     <ul>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
-                        <li>DHUJ</li>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
+                        <h1>Notifications Content</h1>
                     </ul>
                 <Footer />
             </div>

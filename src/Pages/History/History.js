@@ -21,18 +21,18 @@ class History extends Component {
                     <div className='History-Container'>
                     
                     <div className="row">
-                    <div class="set-size charts-container">
-                    <div class={this.state.progressBarPercentage}>
-                        <span class="label">90</span>
-                        <div class="pie">
-                        <div class="left-side half-circle"></div>
-                        <div class="right-side half-circle"></div>
-                        </div>
-                    </div>
+                        <div class="set-size charts-container">
+                            <div class={this.state.progressBarPercentage}>
+                                <span class="label">90</span>
+                                <div class="pie">
+                                    <div class="left-side half-circle"></div>
+                                    <div class="right-side half-circle"></div>
+                                </div>
+                            </div>
 
-                    </div>
+                        </div>
                     <div className='lead'>
-                        <br />
+                       
                         Previous Consumption
                     </div>
                     </div>

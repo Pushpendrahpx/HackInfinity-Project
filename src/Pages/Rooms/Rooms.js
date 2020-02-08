@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
 import './Rooms.css'
 import Footer from '../../Components/Footer/Footer';
+import Host from '../../myIp';
+
 class Rooms extends Component{
     constructor(props){
         super(props)
@@ -26,7 +28,7 @@ class Rooms extends Component{
     }
 
     async componentDidMount(){
-        let response = await fetch('http://localhost:8000/popu/air/');
+        let response = await fetch("http://"+Host.host+":8000/popu/air/");
         let data = await response.json();
         
         data.map(app=>{
@@ -73,7 +75,7 @@ class Rooms extends Component{
         let valueOfDb = status == "off"?true:false;
         console.log(valueOfDb)
         let reponse = await fetch(
-            'http://localhost:8000/iot/io/',
+            "http://"+Host.host+":8000/iot/io/",
             {
                 method:"POST",
                 headers:
@@ -97,6 +99,7 @@ class Rooms extends Component{
                         {this.state.roomname}
                     </div>
                     <div className='rooms'>
+                        <div className='lead'>Helo</div>
                         {
                             this.state.appliances.map(eachAppliance=>{
                                 console.log(eachAppliance.a_io)

@@ -3,9 +3,10 @@ import Navbar from '../../Components/Navbar/Navbar'
 import './home.css'
 import { Link } from 'react-router-dom'
 import Footer from '../../Components/Footer/Footer'
-
+import Host from '../../myIp';
 class home extends Component {
     constructor(props) {
+        console.log(Host.host)
         super(props)
 
         this.state = {
@@ -22,7 +23,7 @@ class home extends Component {
  async componentDidMount(){
     this.getLeaderboardData()
 
-    let rooms_response = await fetch("http://localhost:8000/popu/rooms/");
+    let rooms_response = await fetch("http://"+Host.host+":8000/popu/rooms/");
     let rooms_json = await rooms_response.json();
     this.setState({
         Rooms:rooms_json
@@ -31,11 +32,16 @@ class home extends Component {
         
  }
     getLeaderboardData = async (index = 1)=>{
+        
+        console.log(
+            "Before Starting"
+        )
         let response = await fetch(
-            "http://localhost:8000/popu/rooms/"
+            "http://"+Host.host+":8000/popu/rooms/",
+            {type:"cors","Access-Control-Allow-Origin":"*"}
         )
         let data = await response.json();
-
+            console.log("After Requset",data)
         this.setState({
             LeaderboardData:data
         },()=>{
@@ -53,6 +59,38 @@ class home extends Component {
                     {/* ================================== Rooms ================================== */}
                         
                     <b className='lead'>Rooms Available</b>
+                    <div className='rooms cards horizontal-scroll-wrapper'>{/* Users Rooms Appliances with Rooms Services */}
+                        {
+                            this.state.Rooms.map(
+                                room=>{
+                                    return(
+                                       <Link key={room}  className='room card-item ripple' style={{textDecoration:"none"}} to={`/home/`+room}>
+                                        <div key={room} className='' style={{background:"url('https://image.flaticon.com/icons/svg/2321/2321390.svg') center fit "}}> {/*  for Every Room Actually Map Method will Iterate Here */}
+                                                <div  className='room-title lead'>{room}</div>
+                            
+                                        </div>
+                                        </Link>
+                                    );
+                                }
+                            )
+                        }
+                    </div>
+                    <div className='rooms cards horizontal-scroll-wrapper'>{/* Users Rooms Appliances with Rooms Services */}
+                        {
+                            this.state.Rooms.map(
+                                room=>{
+                                    return(
+                                       <Link key={room}  className='room card-item ripple' style={{textDecoration:"none"}} to={`/home/`+room}>
+                                        <div key={room} className='' style={{background:"url('https://image.flaticon.com/icons/svg/2321/2321390.svg') center fit "}}> {/*  for Every Room Actually Map Method will Iterate Here */}
+                                                <div  className='room-title lead'>{room}</div>
+                            
+                                        </div>
+                                        </Link>
+                                    );
+                                }
+                            )
+                        }
+                    </div>
                     <div className='rooms cards horizontal-scroll-wrapper'>{/* Users Rooms Appliances with Rooms Services */}
                         {
                             this.state.Rooms.map(
