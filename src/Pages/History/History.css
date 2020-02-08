@@ -6,7 +6,7 @@
 
 .row{
     display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;
-   
+   width:fit-content;
 }
 @import url(https://fonts.googleapis.com/css?family=Lato:700);
  *, *:before, *:after {
@@ -140,14 +140,20 @@
  .pie-wrapper.progress-95 .pie {
 	 clip: rect(auto, auto, auto, auto);
 }
- .pie-wrapper.progress-95 .pie .half-circle {
-	 border-color: #e74c3c;
+.pie-wrapper.progress-95 .pie .half-circle {
+    border-color: #e74c3c;
+}
+.pie-wrapper.progress-100.pie .half-circle {
+    border-color: #e74c3c;
 }
  .pie-wrapper.progress-95 .pie .left-side {
 	 transform: rotate(342deg);
 }
- .pie-wrapper.progress-95 .pie .right-side {
-	 transform: rotate(180deg);
+.pie-wrapper.progress-95 .pie .right-side {
+    transform: rotate(180deg);
+}
+.pie-wrapper.progress-100 .pie .right-side {
+    transform: rotate(360deg);
 }
  .pie-wrapper--solid {
 	 border-radius: 50%;

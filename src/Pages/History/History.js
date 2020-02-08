@@ -6,9 +6,9 @@ class History extends Component {
     constructor(props) {
         super(props)
         
-        this.progressStatus = [30,45,60,75,90,95];
+        this.progressStatus = [0,30,45,60,75,90,95,100];
         // Status - 30, 45, 60,75,90,95
-        this.classOfProgessStatus = "pie-wrapper progress-"+this.progressStatus[0];
+        this.classOfProgessStatus = "pie-wrapper progress-"+this.progressStatus[7];
         this.state = {
             progressBarPercentage:this.classOfProgessStatus
         }
@@ -23,13 +23,17 @@ class History extends Component {
                     <div className="row">
                     <div class="set-size charts-container">
                     <div class={this.state.progressBarPercentage}>
-                        <span class="label">90<span class="smaller">%</span></span>
+                        <span class="label">90</span>
                         <div class="pie">
                         <div class="left-side half-circle"></div>
                         <div class="right-side half-circle"></div>
                         </div>
                     </div>
 
+                    </div>
+                    <div className='lead'>
+                        <br />
+                        Previous Consumption
                     </div>
                     </div>
                     </div>
